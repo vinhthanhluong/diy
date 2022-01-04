@@ -2,7 +2,6 @@
 .box-star-line {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .star {
@@ -14,9 +13,9 @@
         text-shadow: none;
         width: 100%;
         white-space: nowrap;
-        font-size: 10px;
+        font-size: 20px;
         line-height: 1;
-        height: 14px;
+        height: 25px;
 
         i {
             margin: 2px 1px;
@@ -24,11 +23,12 @@
     }
 
     .empty-stars {
-        color: #ffd84e;
+        // color: #ffd84e;
+        color: #949494;
     }
 
     .filled-stars {
-        color: #ffd84e;
+        color: #FFB800;
         position: absolute;
         left: 0;
         top: 50%;

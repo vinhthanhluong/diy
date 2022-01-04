@@ -27,11 +27,35 @@
         color: initial;
     }
 
-    &:hover{
-        box-shadow: 10px 10px 20px rgba($color: $b-cl , $alpha: 0.16);
+
+    &.btn-join {
+        width: auto;
+        height: auto;
+        padding: 15px 30px;
+        font-weight: normal;
+        border-radius: 10px;
+        background: linear-gradient(90deg, #FFF004 0%, #FE9239 47.8%, rgba(254, 1, 174, 0.81) 123.2%);
+        transition: all .3s ease;
+
+        &::after{
+			content: '';
+			background: linear-gradient(89.96deg, #00F1EF 2.64%, #005FFF 99.63%);
+			@include pos-full;
+			z-index: -1;
+			transform: scaleX(0);
+			transform-origin: center right;
+			transition:  transform .3s ease;
+		}
+
+        &:hover {
+            &::after{
+				transform: scale(1);
+				transform-origin: center left;
+			}
+        }
     }
 
-   
+
 }
 
 .box-light-dark {
@@ -62,7 +86,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                margin: 3px;   
+                margin: 3px;
                 transition: transform .3s, background .3s;
             }
         }

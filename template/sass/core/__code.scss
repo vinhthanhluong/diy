@@ -2,4 +2,85 @@
     color: $main-cl;
 }
 
+.y-cl{
+    color: #FFF300;
+}
+
+.main{
+    // background-color: $bb-cl-1;
+}
+
+.wrapper{
+    background-color: $bb-cl-1;
+}
+
+.bx-inner{
+    position: relative;
+    transition: all .3s ease;
+    color: $w-cl;
+    border-radius: 10px;
+    overflow: hidden;
+    &:hover{
+        background-color: $w-cl;
+        color: $b-cl;
+        .bx-img{
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .timer  , .star-text{
+            color: #014B54;
+        }
+    }
+    .bx-img{
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all .3s ease;
+    }
+
+    .bx-con{
+        padding: 15px 14px;
+        // transition: all .3s ease;
+    }
+
+    .timer{
+        font-size: 10px;
+        margin-bottom: 10px;
+        // transition: all .3s ease;
+    }
+
+    .price{
+        // transition: all .3s ease;
+    }
+
+    .bx-tt{
+        margin-bottom: 10px;
+        display: block;
+        // transition: all .3s ease;
+    }
+    .box-star-line{
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .star-text{
+        font-size: 10px;
+        margin-left: 5px;
+    }
+
+    .text-free{
+        font-size: 10px;
+        font-weight: bold;
+        padding: 5px 15px;
+        border-radius: 10px;
+        background: linear-gradient(89.96deg, #00F1EF 2.64%, #005FFF 99.63%);
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        color: $w-cl;
+    }
+    
+}
+
 
