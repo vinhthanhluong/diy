@@ -4,37 +4,53 @@
 	li {
 		display: inline-block;
 		vertical-align: middle;
+		margin: 0 3.5px;
 		.page-numbers {
-			width: 40px;
-			height: 40px;
-			border-radius: 100%;
-			border: 1px solid $border-cl;
-			//color: $t-b-cl;
-			font-weight: bold;
+			width: 44px;
+			height: 44px;
+			border-radius: 6px;
 			transition: all .3 ease;
+			background-color: $w-cl;
+			color: $b-cl;
 			@include lh(24, 14);
 			@include flex-mid;
 			&.current {
-				background-color: $main-cl;
-				color: $t-w-cl;
-				border: 1px solid transparent;
+				background: linear-gradient(90deg, #01F1EF -12.5%, #0165FF 100%);
+				color: $w-cl;
+				font-weight: bold;
 			}
 			&:hover {
-				background-color: $main-cl;
-				color: $t-w-cl;
-				border: 1px solid transparent;
+				background: linear-gradient(90deg, #01F1EF -12.5%, #0165FF 100%);
+				color: $w-cl;
+			}
+
+			@include max-media($bk-576){
+				width: 36px;
+				height: 36px;
 			}
 		}
 
+		.page-dot{
+			margin: 0 7.5px;
+		}
+
 		.page-arrow{
-			width: 40px;
-			height: 40px;
+			width: 44px;
+			height: 44px;
 			@include flex-mid;
-			font-size: 16px;
+			background-color: $w-cl;
+			border-radius: 6px;
 			transition: all .3 ease;
 			&:hover {
-				background-color: $main-cl;
-				color: $t-w-cl;
+				background: linear-gradient(90deg, #01F1EF -12.5%, #0165FF 100%);
+				img{
+					filter: brightness(0) invert(1);
+				}
+			}
+
+			@include max-media($bk-576){
+				width: 36px;
+				height: 36px;
 			}
 		}
 	}

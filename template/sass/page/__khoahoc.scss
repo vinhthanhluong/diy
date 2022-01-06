@@ -1,0 +1,369 @@
+.banners-course {
+    background: linear-gradient(87.5deg, #00095E 3.35%, #020F17 78.87%);
+    padding: 15px 0;
+
+    .columns {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .column {
+        &.txt {
+            width: calc(100% / 12 * 6);
+            @include max-media($bk-d-768){
+                width: calc(100% /12 * 7);
+            }
+            @include max-media($bk-576){
+                width: 100%;
+            }
+        }
+
+        &.ig {
+            width: calc(100% / 12 * 5);
+            @include max-media($bk-576){
+                width: 100%;
+            }
+        }
+    }
+
+    .title {
+        margin-bottom: 15px;
+        line-height: 1.2;
+
+        span {
+            display: block;
+        }
+    }
+
+    .desc {
+        line-height: 1.5;
+    }
+}
+
+.page-course {
+    .search-c {
+        .f-search {
+            position: relative;
+        }
+
+        .f-control {
+            padding: 16px 76px;
+            @include fz-16;
+            background: linear-gradient(89.96deg, #FAFEFE 2.64%, #0BFFFA 99.63%);
+            height: auto;
+            border-radius: 10px;
+            @include max-media($bk-d-768){
+                padding: 12px 40px;
+            }
+
+            &::placeholder {
+                color: $b-cl;
+            }
+
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 46px;
+            transform: translateY(-50%);
+            filter: brightness(0) invert(0);
+            @include max-media($bk-d-768){
+                left: 15px;
+            }
+        }
+    }
+
+    .main-course {
+        .column {
+            &.side {
+                width: calc(100% / 12 * 3);
+                @include max-media($bk-d-992){
+                    width: calc(100% /12 * 4);
+                }
+                @include max-media($bk-d-768){
+                    width: 100%;
+                }
+
+            }
+
+            &.txt {
+                width: calc(100% /12 * 9);
+                @include max-media($bk-d-992){
+                    width: calc(100% /12 * 8);
+                }
+                @include max-media($bk-d-768){
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .course-sidebar {
+        position: sticky;
+        top: 100px;
+    }
+
+    .s-title {
+        margin-bottom: 15px;
+    }
+
+    .course-cate {
+        .item {
+            display: block;
+            transition: all .3s ease;
+
+            &:not(:first-child) {
+                margin-top: 15px;
+                @include max-media($bk-d-768){
+                    margin-top: 10px;
+                }
+            }
+
+            &:hover {
+                color: $main-cl;
+            }
+        }
+    }
+
+    .course-fr {
+        margin-top: 30px;
+        @include max-media($bk-d-768){
+            margin-top: 20px;
+        }
+    }
+
+    .course-type {
+        .type-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .label {
+            &:first-child {
+                margin-right: 15px;
+            }
+        }
+
+        .f-hide {
+            display: none;
+
+            &:checked+.checkmrak {
+                background-color: #025FFF;
+                border-color: #025FFF;
+            }
+        }
+
+        .checkmrak {
+            padding: 6px 15px;
+            border: 1px solid $w-cl;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .course-price {
+        margin-top: 30px;
+
+        .bx-range {
+            position: relative;
+            height: 50px;
+            @include max-media($bk-576){
+                height: 30px;
+            }
+        }
+
+        .slider-track {
+            width: 100%;
+            height: 2px;
+            background-color: $w-cl;
+            position: absolute;
+            top: 0%;
+            bottom: 0;
+            border-radius: 5px;
+            margin: auto;
+        }
+
+        .f-range {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100%;
+            outline: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: transparent !important;
+            pointer-events: none;
+
+            //track
+            &::-webkit-slider-runnable-track {
+                -webkit-appearance: none;
+                height: 3px;
+            }
+
+            &::-moz-range-track {
+                -moz-appearance: none;
+                height: 3px;
+            }
+
+            &::-ms-track {
+                appearance: none;
+                height: 3px;
+            }
+
+
+            //thumb
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: $w-cl;
+                cursor: pointer;
+                pointer-events: auto;
+                margin-top: -7px;
+            }
+
+            &::-moz-range-thumb {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: $w-cl;
+                cursor: pointer;
+                pointer-events: auto;
+                margin-top: -7px;
+            }
+
+            &::-ms-thumb {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: $w-cl;
+                cursor: pointer;
+                pointer-events: auto;
+                margin-top: -7px;
+            }
+
+            &:active {
+                &::-webkit-slider-thumb {
+                    background: $main-cl;
+                }
+            }
+
+
+
+
+        }
+    }
+
+    .btn-join {
+        margin-top: 30px;
+        font-weight: bold;
+        color: $w-cl;
+        padding: 16px 65px;
+        cursor: pointer;
+        @include max-media($bk-d-992){
+            padding: 12px 30px;
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+
+    }
+
+    .cols {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+        position: relative;
+
+        @include max-media($bk-1024) {
+            margin: -7.5px;
+        }
+    }
+
+
+    .col {
+        width: calc(100% / 3);
+        padding: 15px;
+
+        @include max-media($bk-1024) {
+            padding: 7.5px;
+        }
+        @include max-media($bk-d-992){
+            width: calc(100% / 2);
+        }
+    }
+
+    .c-sp {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 15px;
+        border-radius: 10px;
+        height: 100%;
+        @include max-media($bk-576){
+            padding: 10px;
+        }
+        .img {
+            img {
+                margin: 0 auto;
+                @include max-media(450px){
+                    max-height: 110px;
+                }
+            }
+        }
+
+        .content {
+            border-top: 1px solid $w-cl;
+            padding-top: 14px;
+            margin-top: 15px;
+            @include max-media($bk-576){
+                margin-top: 10px;
+                padding-top: 10px;
+            }
+            
+        }
+
+        .c-title {
+            color: $main-cl;
+            margin-bottom: 15px;
+            display: block;
+            @include  max-media($bk-576){
+                margin-bottom: 7px;
+            }
+        }
+
+        .desc {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            @include line-clamp(4);
+            @include  max-media($bk-576){
+                margin-bottom: 10px;
+                @include max-media($bk-576){
+                    @include line-clamp(3)
+                }
+            }
+        }
+
+        .c-now {
+            transition: all .3s ease;
+
+            &:hover {
+                color: $main-cl;
+            }
+        }
+
+
+    }
+
+
+
+
+}

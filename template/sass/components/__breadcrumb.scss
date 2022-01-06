@@ -1,14 +1,9 @@
 .breadcrumb {
     width: 100%;
 
-    &.bg-g-f2 {
-        //background-color: $g-F2F0-cl;
-    }
-
     .breadcrumb-menu {
         display: flex;
-        border-bottom: 1px solid $main-cl;
-        padding: 10px 0;
+        align-items: center;
 
         @include max-media($bk-576) {
             overflow-x: scroll;
@@ -20,31 +15,29 @@
         .breadcrumb-list {
             &:not(:first-child) {
                 &::before {
-                    content: '\f111 ';
+                    content: '/ ';
                     font-family: "Fontawesome";
-                    font-size: 8px;
-                    color:  red;
-                    padding-right: 8px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    vertical-align: middle;
+                    padding-right: 4px;
                 }
 
-                padding-left: 12px;
+                padding-left: 6px;
             }
 
             &.current{
-                color: $main-cl;
+                // color: $main-cl;
             }
 
             a {
-                font-size: 15px;
-                font-weight: bold;
+                vertical-align: middle;
+                @include fz-16;
                 transition: all .3s ease;
-
-                @include max-media($bk-d-768) {
-                    font-size: 13px;
-                }
+                text-transform: uppercase;
 
                 &:hover {
-                    color: $main-cl;
+                    // color: $main-cl;
                 }
             }
         }

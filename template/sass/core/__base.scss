@@ -34,18 +34,18 @@ html {
 body {
     font-size: $fz-body;
     min-height: 100vh;
-    background: var(--theme-bg-color);
-    color: var(--theme-text-color);
+    // background: var(--theme-bg-color);
+    // color: var(--theme-text-color);
     transform-origin: all .3s;
+    color: $w-cl;
 
-    &[data-theme='dark'] {
-        --theme-bg-color: #{$dark-cl};
-        --theme-text-color: #{$light-cl};
-
-    }
+    // &[data-theme='dark'] {
+    //     --theme-bg-color: #{$dark-cl};
+    //     --theme-text-color: #{$light-cl};
+    // }
 
     &.show{
-        @include custom-scrollbar(10px, $main-cl );
+        @include custom-scrollbar(8px, $main-cl );
     }
 }
 
@@ -59,7 +59,7 @@ html {
     font-display: swap;
     line-height: $lh-body;
     // color: $cl-body;
-    @include custom-scrollbar(10px , transparent);
+    @include custom-scrollbar(8px , transparent);
 }
 
 a {

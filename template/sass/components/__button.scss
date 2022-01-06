@@ -37,80 +37,25 @@
         background: linear-gradient(90deg, #FFF004 0%, #FE9239 47.8%, rgba(254, 1, 174, 0.81) 123.2%);
         transition: all .3s ease;
 
-        &::after{
-			content: '';
-			background: linear-gradient(89.96deg, #00F1EF 2.64%, #005FFF 99.63%);
-			@include pos-full;
-			z-index: -1;
-			transform: scaleX(0);
-			transform-origin: center right;
-			transition:  transform .3s ease;
-		}
+        &::after {
+            content: '';
+            background: linear-gradient(89.96deg, #00F1EF 2.64%, #005FFF 99.63%);
+            @include pos-full;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: center right;
+            transition: transform .3s ease;
+        }
 
         &:hover {
-            &::after{
-				transform: scale(1);
-				transform-origin: center left;
-			}
-        }
-    }
-
-
-}
-
-.box-light-dark {
-
-    .switch {
-        background: transparent;
-        border-radius: 20px;
-        cursor: pointer;
-        display: block;
-        height: 40px;
-        position: relative;
-        width: 80px;
-
-        .switch-toggle {
-            background: $dark-cl;
-            border-radius: 20px;
-            display: block;
-            height: 100%;
-            transition: background .3s;
-
             &::after {
-                content: "";
-                display: block;
-                width: 34px;
-                height: 34px;
-                background: $light-cl;
-                border-radius: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                margin: 3px;
-                transition: transform .3s, background .3s;
-            }
-        }
-
-        .switch-state {
-            opacity: 0;
-            pointer-events: none;
-            position: absolute;
-            outline: none;
-
-            &:focus~.switch-toggle {
-                box-shadow: 0 0 2px 3px rgba(0, 160, 204, 0.8);
-            }
-
-            &:checked~.switch-toggle {
-                background: $light-cl;
-
-                &::after {
-                    background: $dark-cl;
-                    transform: translate(calc(80px - 40px));
-                }
+                transform: scale(1);
+                transform-origin: center left;
             }
         }
     }
+
+
 }
 
 .hamburger-btn {
@@ -119,9 +64,12 @@
     position: relative;
     cursor: pointer;
     display: none;
-
+    margin-left: 20px;
     @include max-media($bk-d-1200) {
         display: block;
+    }
+    @include max-media($bk-576){
+        margin-left: 15px;
     }
 
     .bar {
@@ -180,7 +128,7 @@
     right: 20px;
     width: 40px;
     height: 40px;
-    background-color: $main-cl;
+    // background-color: $main-cl;
     border: 1px $main-cl solid;
     border-radius: 4px;
     cursor: pointer;
@@ -188,6 +136,7 @@
     overflow: hidden;
     @include trans(.6s);
     @include hidden();
+    background: linear-gradient(45deg, #00F1EF 2.64%, #005FFF 99.63%);
 
     &.--active {
         @include visible();
@@ -215,10 +164,15 @@
         transform: translate(-50%, 150%);
         @include hidden();
         color: $main-cl;
+
+        background: linear-gradient(45deg, #00F1EF 2.64%, #005FFF 99.63%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     &:hover {
-        background-color: $w-cl;
+        // background-color: $w-cl;
+        background: $w-cl;
 
         &::before {
             transform: translate(-50%, -150%);
@@ -231,84 +185,3 @@
         }
     }
 }
-
-// .scroll-top-progress {
-//     position: fixed;
-//     bottom: 30px;
-//     right: 20px;
-//     width: 44px;
-//     height: 44px;
-//     cursor: pointer;
-//     z-index: 999;
-//     overflow: hidden;
-//     transform: translateY(30px);
-//     box-shadow: inset 0 0 0 2px rgb(130 130 130 / 20%);
-//     border-radius: 50px;
-//     @include trans(.6s);
-//     @include hidden();
-
-//     @include max-media($bk-576){
-//         width: 30px;
-//         height: 30px;
-//     }
-
-//     &.--active{
-//        @include visible();
-//        transform: translateY(0px);
-//     }
-
-
-//     &::before , &::after{
-//         content: "";
-//         font-family: "Fontawesome";
-//         color: $w-cl;
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         font-size: 20px;
-//         @include trans(.3s);
-//     }
-
-//     &::before{
-//         content: "\f106 ";
-//         transform: translate(-50% , -50%);
-//         color: $b-cl;
-//     }
-
-//     &::after{
-//         content: "\f102  ";
-//         transform: translate(-50%, 150%);
-//         @include hidden();
-//         color: $main-cl;
-//     }
-
-//     &:hover{
-//        // background-color: $w-cl;
-//         &::before{
-//             transform: translate(-50% , -150%);
-//             @include hidden();
-//         }
-
-//         &::after{
-//             transform: translate(-50%, -50%);
-//             @include visible();
-//         }
-//     }
-
-
-
-
-//     svg {
-//         position: absolute;
-//     }
-//     circle {
-//         fill: rgba(255,255,255,0.9);
-//     }
-//     .animated-circle {
-//         fill: transparent;
-//         stroke-width: 2px;
-//         stroke: $main-cl;
-//         stroke-dasharray: 126;
-//         stroke-dashoffset: 126;
-//     }
-// }

@@ -1,14 +1,31 @@
 .footer{
-    background-color: $bg-w-cl;
+    background-color: #051629;
     margin-top: auto;
+    color: $w-cl;
     .logo{
-        min-width: 170px;
-        margin: auto;
+        // min-width: 170px;
+        margin-bottom: 15px;
     }
 
-    .test{
-        width: 100%;
-        height: 500px;
-        background-color: wheat;
+    .column{
+        width: calc(100% / 4);
     }
+
+    .ft-title{
+        margin-bottom: 15px;
+    }
+
+    .ft-item{
+        display: block;
+        transition: all .3s ease;
+        &:not(:first-child){
+            margin-top: 15px;
+        }
+
+        &:hover{
+            color: $main-cl;
+        }
+    }
+
+
 }

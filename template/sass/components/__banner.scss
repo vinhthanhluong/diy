@@ -76,11 +76,29 @@
         background-size: cover;
         background-position: center;
         padding: 156px 0;
+        @include max-media($bk-d-1440){
+            padding: 120px 0;
+        }
+
+        @include max-media($bk-d-1200){
+            padding: 80px 0;
+        }
+
+        @include max-media($bk-d-992){
+            padding: 60px 0;
+        }
+
+        @include max-media($bk-576){
+            padding: 40px 0;
+        }
     }
 
     .banners-box {
         color: $w-cl;
         max-width: 395px;
+        @include max-media($bk-d-768){
+            max-width: 350px
+        }
 
         .label {
             margin-bottom: 5px;
@@ -98,76 +116,18 @@
 
     .btn-join {
         margin-top: 30px;
-
-
-        &:hover {}
-
-    }
-}
-
-.signup-informa {
-    color: $w-cl;
-
-    .signup-wrapper {
-        padding: 30px;
-        border-radius: 10px;
-        background: linear-gradient(89.63deg, #FF00E1 -2.56%, #01FFFF 87.82%);
-    }
-
-    .columns {
-        justify-content: space-between;
-		align-items: center;
-
-    }
-
-    .column {
-        &.txt {
-            width: calc(100% / 10 * 3 - 20px);
-        }
-
-        &.frm {
-            width: calc(100% / 10 * 6 + 30px);
+        @include max-media($bk-576){
+            margin-top: 20px;
         }
     }
 
-	.title{
-		font-weight: normal;
-	}
-
-	.signup-form{
-		position: relative;
-		.f-submit{
-			position: absolute;
-			top: 5px;
-			bottom: 5px;
-			right: 7.5px;
-			background-color: $yellow-cl;
-			width: auto;
-			height: auto;
-			padding: 11px 30px;
-			border-radius: 10px;
-			cursor: pointer;
-			box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
-			border: 1px solid transparent;
-			&:hover , &:focus{
-				transform: scale(.9);
-			}
-		}
-
-		.f-control{
-			border-radius: 10px;
-			padding: 16px 15px;
-			height: 50px;
-			transition: all .3s ease;
-			&::placeholder{
-				opacity: .3;
-			}
-		}
-
-		&:hover , &:focus{
-			.f-control{
-				border-color: $main-cl;
-			}
-		}
-	}
+    &.banners-page{
+        background: linear-gradient(90deg, #00F1EF 24.37%, #0163FF 93.75%);
+        color: $b-cl;
+        padding: 85px 0;
+        .title{
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+    }
 }
