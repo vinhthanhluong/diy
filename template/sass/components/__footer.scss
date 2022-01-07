@@ -23,7 +23,11 @@
         }
 
         &:hover{
-            color: $main-cl;
+            color: $yellow-cl;
+        }
+
+        &.current-menu{
+            color: $yellow-cl;
         }
     }
 
