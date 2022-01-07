@@ -1,0 +1,164 @@
+.page-teacher {
+
+    &:nth-child(odd) {
+        .columns {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .columns {
+        align-items: center;
+    }
+
+    .column {
+        width: 50%;
+    }
+
+    .title {
+        display: inline-block;
+    }
+
+    .img {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .mona-content {
+        line-height: 1.5;
+
+        p {
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ul {
+            margin: 15px 0 0;
+
+            li {
+                position: relative;
+                padding-left: 20px;
+                margin-left: 15px;
+
+                &:not(:first-child) {
+                    margin-top: 15px;
+                }
+
+                &::before {
+                    content: '';
+                    background-image: url('../img/svg/icon-check.svg');
+                    background-position: center;
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    position: absolute;
+                    top: 4px;
+                    left: 0;
+                }
+            }
+        }
+
+
+    }
+}
+
+.team-teacher {
+
+    .column {
+        width: calc(100% / 4);
+    }
+
+    .title {
+        display: inline-block;
+    }
+
+    .teacher-bx {
+        border-radius: 10px;
+        background: #181F28;
+        padding: 15px;
+        transition: all .3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+        &::after{
+            content: '';
+            @include pos-full;
+            background: linear-gradient(45deg, #FF00E1 8.56%, #01FFFF 87.82%);
+            z-index: -1;
+            @include hidden;
+            transition: all .4s ease-in;
+        }
+        &:hover{
+            &::after{
+                @include visible;
+            }
+        }
+    }
+
+    .teacher-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .content {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .name {
+        margin-bottom: 3px;
+        line-height: 1.2;
+    }
+
+    .job {
+        margin-bottom: 15px;
+    }
+
+    .box-star-line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .star-text {
+            font-size: 10px;
+            margin-left: 5px;
+        }
+    }
+
+    .star {
+        .empty-stars,
+        .filled-stars {
+            i {
+                margin: 0;
+            }
+        }
+    }
+
+    .teacher-ft {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid $w-cl;
+        .itm{
+            display: flex;
+            align-items: center;
+
+            img{
+                margin-right: 5px;
+            }
+        }
+    }
+
+
+}

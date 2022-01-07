@@ -283,7 +283,9 @@
     .steam-itm{
         display: flex;
         align-items: center;
-
+        img{
+            filter: brightness(0) invert(0);
+        }
         .itm-tt{
             font-size: 10px;
             padding-left: 5px;

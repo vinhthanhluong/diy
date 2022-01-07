@@ -21,6 +21,7 @@ import SlideProductModule from './modules/SlideProductModule.js';
 import SelectModule from './modules/SelectModule.js';
 import WowModule from './modules/WowModule.js';
 import MasonryModule from './modules/MasonryModule.js';
+import TiltModule from './modules/TiltModule.js';
 
 jQuery(document).ready(function ($) {
     ScrollTopModule();
@@ -46,4 +47,5 @@ jQuery(document).ready(function ($) {
     SelectModule();
     WowModule();
     MasonryModule();
+    TiltModule();
 });
