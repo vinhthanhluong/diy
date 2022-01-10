@@ -9,6 +9,17 @@
 
     .column{
         width: calc(100% / 4);
+        @include max-media($bk-d-992){
+            width: calc(100% / 2);
+        }
+
+        &:nth-child(4){
+            @include max-media($bk-576){
+                width: 100%;
+            }
+        }
+
+        
     }
 
     .ft-title{

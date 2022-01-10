@@ -362,7 +362,7 @@
         margin: 0 auto;
 
         @include max-media($bk-576) {
-            padding: 20px;
+            padding: 15px;
         }
     }
 
@@ -452,10 +452,22 @@
     .column {
         &.txt {
             width: calc(100% /12 * 3);
+            @include max-media($bk-d-1200){
+                width: calc(100% / 12 * 4);
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
 
         &.sld {
             width: calc(100% /12 * 9);
+            @include max-media($bk-d-1200){
+                width: calc(100% / 12 * 8);
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
     }
 
@@ -467,6 +479,9 @@
     .desc {
         line-height: 1.5;
         margin-bottom: 30px;
+        @include max-media($bk-d-768){
+            margin-bottom: 20px;
+        }
     }
 
 
@@ -476,9 +491,21 @@
 
     .swiper {
         margin: 0 -15px;
+        @include max-media($bk-d-992){
+            margin: 0 -7.5px;
+        }
 
         &-custom {
             position: relative;
+
+            &:hover{
+                .swiper-button-prev , .swiper-button-next{
+                    @include max-media($bk-576){
+                        opacity: 1 !important;
+                        pointer-events: auto !important;
+                    }
+                }
+            }
         }
 
         &-slide {
@@ -486,7 +513,15 @@
             width: calc(100% / 3);
             opacity: .6;
             transition: all .3s ease;
-
+            @include max-media($bk-d-1200){
+                width: calc(100% / 2);
+            }
+            @include max-media($bk-d-992){
+                padding: 0 7.5px;
+            }
+            @include max-media($bk-576){
+                width: 100%;
+            }
             &-active {
                 opacity: 1;
             }
@@ -505,10 +540,19 @@
                 color: $b-cl;
                 font-weight: bold;
             }
+            @include max-media($bk-576){
+                opacity: 0 !important;
+                pointer-events: none !important;
+            }
         }
 
         &-button-prev {
             @include hidden;
+            left: 0;
+            transform: translate(100% , 0);
+            @include max-media($bk-d-768){
+                @include visible;
+            }
 
             &::after {
                 margin-right: 2px;
@@ -518,6 +562,13 @@
         &-button-next {
             right: -15px;
             transform: translate(100%, 0);
+            @include max-media($bk-d-1440){
+                right: 0px;
+            }
+            @include max-media($bk-d-1200){
+                right: 0px;
+                transform: translate(-100%, 0);
+            }
 
             &::after {
                 margin-left: 2px;
@@ -531,9 +582,14 @@
         color: $b-cl;
         border-radius: 10px;
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
-
+        @include max-media($bk-d-992){
+            padding: 20px;
+        }
         .icon-ig {
             margin-bottom: 15px;
+            @include max-media($bk-d-992){
+                margin-bottom: 5px;
+            }
         }
 
         .std-say {
@@ -618,11 +674,17 @@
             right: auto;
             left: auto;
             @include hidden;
+            @include max-media($bk-d-1200){
+                background-color: $main-cl;
+            }
 
             &::after {
                 font-size: 14px;
                 font-weight: bold;
                 color: $main-cl;
+                @include max-media($bk-d-1200){
+                    color: $w-cl;
+                }
             }
 
 
@@ -636,6 +698,9 @@
         &-button-prev {
             left: 0;
             transform: translate(-100%, -50%);
+            @include max-media($bk-d-1200){
+                transform: translate(100% , -50%);
+            }
 
             &::after {
                 margin-right: 2px;
@@ -646,7 +711,9 @@
         &-button-next {
             right: 0;
             transform: translate(100%, -50%);
-
+            @include max-media($bk-d-1200){
+                transform: translate(-100% , -50%);
+            }
             &::after {
                 margin-left: 2px;
             }
@@ -678,7 +745,7 @@
 .home-aboutus {
     color: $w-cl;
     padding-bottom: 80px;
-
+    display: none;
     .columns{
         align-items: center;
     }
@@ -686,8 +753,6 @@
     .column {
         width: 50%;
     }
-
-    .about-inner {}
 
     .title {
         display: inline-block;

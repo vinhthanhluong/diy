@@ -1,6 +1,12 @@
 .page-blog {
     .column {
         width: calc(100% / 3);
+        @include max-media($bk-d-768){
+            width: calc(100% / 2);
+        }
+        @include max-media($bk-576){
+            width: 100%;
+        }
     }
 }
 
@@ -41,12 +47,18 @@
         display: block;
         color: $main-cl;
         transition: all .3s ease;
+        @include line-clamp(3);
+        @include max-media($bk-d-992){
+            -webkit-line-clamp: 2;
+            margin-bottom: 10px;
+        }
     }
 
     .desc {
         margin-bottom: 15px;
         line-height: 1.5;
         @include line-clamp(3);
+        
     }
 
     .blog-ft {
@@ -64,6 +76,9 @@
 
         &:nth-child(1) {
             padding-right: 40px;
+            @include max-media($bk-d-992){
+                padding-right: 20px;
+            }
         }
     }
 }

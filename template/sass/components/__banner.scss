@@ -125,9 +125,18 @@
         background: linear-gradient(90deg, #00F1EF 24.37%, #0163FF 93.75%);
         color: $b-cl;
         padding: 85px 0;
+        @include max-media($bk-d-1200){
+            padding: 65px 0;
+        }
+        @include max-media($bk-d-992){
+            padding: 45px 0;
+        }
         .title{
             margin-bottom: 15px;
             line-height: 1.2;
+            @include max-media($bk-576){
+                margin-bottom: 10px;
+            }
         }
     }
 }

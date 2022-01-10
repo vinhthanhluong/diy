@@ -1,10 +1,11 @@
-.top-course-tab{
-    .tab-head{
+.top-course-tab {
+    .tab-head {
         margin-bottom: 15px;
         display: flex;
+        flex-wrap: wrap;
     }
 
-    .tab-title{
+    .tab-title {
         padding-bottom: 5px;
         transition: all .3s ease;
         @include fz-36;
@@ -12,12 +13,19 @@
         opacity: .5;
         position: relative;
         cursor: pointer;
-        &:not(:first-child){
-            margin-left: 40px;
+        @include max-media($bk-576){
+            font-size: 21px;
         }
 
-        &::after{
-            content:'';
+        &:not(:first-child) {
+            margin-left: 40px;
+            @include max-media($bk-576){
+                margin-left: 15px;
+            }
+        }
+
+        &::after {
+            content: '';
             position: absolute;
             bottom: 0;
             left: 0;
@@ -28,36 +36,63 @@
             @include hidden;
         }
 
-        &.active{
+        &.active {
             opacity: 1;
-            &::after{
+
+            &::after {
                 @include visible;
             }
         }
     }
 
-    .tab-cont{
+    .tab-cont {
         display: none;
 
-        &.active{
+        &.active {
             display: block;
             animation: showTab 1s;
         }
     }
 
-    .swiper{
+    .swiper {
         margin: 0 -5px;
         padding-bottom: 30px;
-        &-custom{
+
+        &-custom {
             position: relative;
+
+            &:hover{
+                .swiper-button-next , .swiper-button-prev{
+                    @include max-media($bk-d-1200){
+                        @include visible;
+                    }
+                }
+            }
         }
 
-        &-slide{
+        &-slide {
             width: calc(100% / 5);
             padding: 0 5px;
+
+            @include max-media($bk-d-1200) {
+                width: calc(100% / 4);
+            }
+
+            @include max-media($bk-d-992) {
+                width: calc(100% / 3);
+            }
+
+            @include max-media($bk-d-768) {
+                width: calc(100% / 2);
+            }
+
+            @include max-media($bk-576) {
+                width: 100%;
+            }
         }
 
-        &-button-prev , &-button-next{
+        &-button-prev,
+        &-button-next {
             width: 30px;
             height: 30px;
             border-radius: 100%;
@@ -65,51 +100,56 @@
             top: 50%;
             margin: 0;
             transition: all .3s ease;
-    
-            &::after{
+            @include max-media($bk-d-1200){
+                @include hidden;
+            }
+
+            &::after {
                 color: $b-cl;
                 transition: all .3s ease;
                 font-size: 14px;
                 font-weight: bold;
             }
-    
-            &:hover{
-                &::after{
+
+            &:hover {
+                &::after {
                     color: #1857BD;
                 }
             }
         }
 
-        &-button-prev{
+        &-button-prev {
             left: -30px;
-            transform: translate(-100% , -50%);
-            &::after{
+            transform: translate(-100%, -50%);
+            &::after {
                 margin-right: 2px;
             }
-    
-            @include max-media($bk-d-1200){
-                left: 10px;
+            @include max-media($bk-d-1200) {
+                left: 0px;
+                transform: translate(100%, -50%);
             }
         }
 
-        &-button-next{
+        &-button-next {
             right: -30px;
-            transform: translate(100% , -50%);
-            &::after{
+            transform: translate(100%, -50%);
+            &::after {
                 margin-left: 2px;
             }
-            @include max-media($bk-d-1200){
-                right: 10px;
+            @include max-media($bk-d-1200) {
+                right: 00px;
+                transform: translate(-100% , -50%);
             }
         }
 
-        &-pagination{
-            .swiper-pagination-bullet{
+        &-pagination {
+            .swiper-pagination-bullet {
                 width: 8px;
                 height: 8px;
                 background-color: $w-cl;
                 opacity: 1;
-                &-active{
+
+                &-active {
                     background-color: $main-cl;
                 }
             }
@@ -122,31 +162,59 @@
 }
 
 
-.course-steams{
-    .title{
+.course-steams {
+    .title {
         display: inline-block;
     }
 
-    .swiper{
+    .swiper {
         margin: 0 -5px;
         padding-bottom: 30px;
 
-        &-custom{
+        &-custom {
             position: relative;
+
+            &:hover {
+
+                .swiper-button-next,
+                .swiper-button-prev {
+                    @include max-media($bk-d-1200) {
+                        @include visible;
+
+                    }
+                }
+            }
         }
     }
 
-    .swiper-slide{
+    .swiper-slide {
         width: calc(100% / 5);
-        padding: 0 5px ;
+        padding: 0 5px;
+
+        @include max-media($bk-d-1200) {
+            width: calc(100% / 4);
+        }
+
+        @include max-media($bk-d-992) {
+            width: calc(100% / 3);
+        }
+
+        @include max-media($bk-d-768) {
+            width: calc(100% / 2);
+        }
+
+        @include max-media($bk-576) {
+            width: 100%;
+        }
     }
 
-    .course-swiper{
+    .course-swiper {
         overflow: hidden;
-       
+
     }
 
-    .swiper-button-prev , .swiper-button-next{
+    .swiper-button-prev,
+    .swiper-button-next {
         width: 30px;
         height: 30px;
         border-radius: 100%;
@@ -155,124 +223,138 @@
         margin: 0;
         transition: all .3s ease;
 
-        &::after{
+        @include max-media($bk-d-1200) {
+            @include hidden;
+        }
+
+        &::after {
             color: $b-cl;
             transition: all .3s ease;
             font-size: 14px;
             font-weight: bold;
         }
 
-        &:hover{
-            &::after{
+        &:hover {
+            &::after {
                 color: #1857BD;
             }
         }
     }
 
-    .swiper-button-prev{
+    .swiper-button-prev {
         left: -30px;
-        transform: translate(-100% , -50%);
-        &::after{
+        transform: translate(-100%, -50%);
+
+        &::after {
             margin-right: 2px;
         }
 
-        @include max-media($bk-d-1200){
-            left: 10px;
+        @include max-media($bk-d-1200) {
+            left: 0px;
+            transform: translate(100%, -50%);
         }
     }
 
-    .swiper-button-next{
+    .swiper-button-next {
         right: -30px;
-        transform: translate(100% , -50%);
-        &::after{
+        transform: translate(100%, -50%);
+
+        &::after {
             margin-left: 2px;
         }
-        @include max-media($bk-d-1200){
-            right: 10px;
+
+        @include max-media($bk-d-1200) {
+            right: 0;
+            transform: translate(-100%, -50%);
         }
     }
 
-    .swiper-pagination{
-        .swiper-pagination-bullet{
+    .swiper-pagination {
+        .swiper-pagination-bullet {
             width: 8px;
             height: 8px;
             background-color: $w-cl;
             opacity: 1;
-            &-active{
+
+            &-active {
                 background-color: $main-cl;
             }
         }
     }
 
-    .swiper-opa{
-        .swiper-slide{
+    .swiper-opa {
+        .swiper-slide {
             opacity: .6;
             transition: all .3s ease;
 
-            &:hover{
+            &:hover {
                 opacity: 1;
             }
         }
     }
 
     ///steam-bx
-    .steam-inner{
+    .steam-inner {
         background-color: $w-cl;
         color: $b-cl;
         border-radius: 10px;
     }
 
-    .steam-head{
+    .steam-head {
         display: flex;
         padding: 15px;
-        
+
     }
 
-    .avatars{
+    .avatars {
         width: 40px;
         height: 40px;
         border-radius: 100%;
         overflow: hidden;
     }
 
-    .steam-txt{
+    .steam-txt {
         padding-left: 7px;
         width: calc(100% - 40px);
-        .name{
+
+        .name {
             margin-bottom: 3px;
             line-height: 1.2;
         }
-        .job{
+
+        .job {
             margin-bottom: 15px;
         }
 
-        .box-star-line{
+        .box-star-line {
             display: flex;
             align-items: center;
         }
 
-        .star .empty-stars , .star .filled-stars {
+        .star .empty-stars,
+        .star .filled-stars {
             font-size: 18px;
-            i{
+
+            i {
                 margin: 0;
             }
         }
 
-        .star{
-            .filled-stars{
+        .star {
+            .filled-stars {
                 line-height: 22px;
             }
         }
 
-        .star-text{
+        .star-text {
             font-size: 10px;
             padding-left: 3px;
         }
     }
 
-   
 
-    .steam-ft{
+
+    .steam-ft {
         border-top: 1px solid rgba($color: #C4C4C4, $alpha: .3);
         display: flex;
         align-items: center;
@@ -280,13 +362,15 @@
         padding: 15px;
     }
 
-    .steam-itm{
+    .steam-itm {
         display: flex;
         align-items: center;
-        img{
+
+        img {
             filter: brightness(0) invert(0);
         }
-        .itm-tt{
+
+        .itm-tt {
             font-size: 10px;
             padding-left: 5px;
         }

@@ -72,8 +72,8 @@ export default function SlideModule() {
             const swiper = new Swiper(sliderContainer, {
                 speed: 1000,
                 // loop: true,
-                spaceBetween: 20,
-                slidesPerView: 4,
+                // spaceBetween: 30,
+                // slidesPerView: 4,
                 // autoplay: {
                 //     delay: 4000,
                 // },
@@ -93,16 +93,18 @@ export default function SlideModule() {
                 },
 
                 breakpoints: {
-                    // 320: {
-                    //     spaceBetween: 50
-                    // },
-                    // 480: {
-                    //     spaceBetween: 30
-                    // },
-                    // 576: {
-                    //     spaceBetween: 0,
-
-                    // }
+                    320: {
+                        spaceBetween: 15,
+                        slidesPerView: 2,
+                    },
+                    576: {
+                        spaceBetween: 15,
+                        slidesPerView: 3,
+                    },
+                    992: {
+                        spaceBetween: 30,
+                        slidesPerView: 4,
+                    }
                 }
                 // observeParents:true,
                 // observeSlideChildren: true,

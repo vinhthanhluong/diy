@@ -1,0 +1,403 @@
+.accounts-if {
+    .column {
+        &.acc-side {
+            width: calc(100% / 12 * 3);
+        }
+
+        &.acc-txt {
+            width: calc(100% / 12 * 9);
+        }
+    }
+
+    .accounts-sidebar {
+        // padding-top: 60px;
+        position: relative;
+        z-index: 0;
+
+        &::after {
+            content: '';
+            width: 1px;
+            height: 374px;
+            background-color: #c4c4c4;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+    }
+
+    .acc-list {}
+
+    .acc-item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:not(:first-child) {
+            margin-top: 15px;
+        }
+
+        &.active {
+            border-right: 1px solid $main-cl;
+
+            img {
+                filter: none;
+            }
+
+            .acc-p {
+                color: $main-cl;
+            }
+        }
+
+        &:hover {
+            img {
+                filter: none;
+            }
+
+            .acc-p {
+                color: $main-cl;
+            }
+        }
+
+        img {
+            width: 15px;
+            height: 15px;
+            filter: brightness(0) invert(1);
+        }
+
+        .acc-p {
+            padding-left: 10px;
+            text-transform: uppercase;
+        }
+    }
+
+    .cols {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+
+        @include max-media($bk-d-992) {
+            margin: -7.5px;
+        }
+    }
+
+    .col {
+        padding: 15px;
+
+        @include max-media($bk-d-992) {
+            padding: 7.5px;
+        }
+    }
+
+    // account infor
+    .acc-infor {
+        padding: 15px 0;
+
+        .cols {
+            align-items: center;
+        }
+
+        .col {
+            &.ig {
+                width: calc(100% / 9 * 3);
+            }
+
+            &.txt {
+                width: calc(100% / 9 * 6);
+            }
+        }
+
+        .acc-ig {
+            background-color: $w-cl;
+            border-radius: 10px;
+            padding: 46px 0 92px;
+            color: $b-cl;
+            text-align: center;
+        }
+
+        .img {
+            width: 130px;
+            height: 130px;
+            border-radius: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .acc-name {
+            margin-top: 15px;
+            text-transform: capitalize;
+        }
+
+        .f-hidden {
+            display: none;
+        }
+
+        .acc-upl {
+            margin-top: 15px;
+            color: $main-cl;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                background-image: url('../img/svg/icon-download.svg');
+                width: 15px;
+                height: 15px;
+                margin-left: 15px;
+            }
+
+        }
+
+        .acc-label {
+            @include fz-16;
+            font-weight: bold;
+            margin-bottom: 9px;
+        }
+
+        .f-control {
+            @include fz-16;
+            height: auto;
+            padding: 13px 17px 13px;
+            transition: all .3s ease;
+            border-radius: 10px;
+
+            &:hover,
+            &:focus {
+                border-color: $main-cl;
+            }
+
+            &::placeholder {
+                color: $b-cl;
+                opacity: .4;
+            }
+        }
+
+        .acc-frm {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -7.5px -15px;
+        }
+
+        .acc-group {
+            width: 50%;
+            padding: 7.5px 15px;
+
+            &.w-100 {
+                width: 100%;
+            }
+        }
+
+        .acc-btn {
+            margin-top: 15px;
+            margin-left: auto;
+            width: auto;
+        }
+
+        .f-submit {
+            width: auto;
+            background: linear-gradient(90deg, #FFF004 0%, #FE9239 47.8%, rgba(254, 1, 174, 0.81) 123.2%);
+            color: $w-cl;
+            border-radius: 10px;
+            padding: 16px 30px;
+            cursor: pointer;
+        }
+    }
+
+    // account course
+    .acc-course {
+        .title {
+            display: inline-block;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+    }
+
+    // account cart
+    .acc-cart {
+
+        .acc-cols {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+        }
+
+        .acc-col {
+            padding: 15px;
+
+            &.ac-tx {
+                width: calc(100% / 9 * 6);
+            }
+
+            &.ac-py {
+                width: calc(100% / 9 * 3);
+            }
+        }
+
+        .ac-txt{
+            padding: 60px 0 ;
+        }
+
+        .ac-py{
+            padding: 15px 0;
+        }
+
+        .title {
+            display: inline-block;
+            line-height: 1.2;
+        }
+
+        .acc-tab {
+            margin-top: 30px;
+            width: 100%;
+
+            thead {
+                th {
+                    text-transform: uppercase;
+                    text-align: left;
+
+                    &:nth-child(1) {
+                        width: 15%;
+                    }
+
+                    &:nth-child(2) {
+                        width: 55%;
+                    }
+
+                    &:nth-child(3) {
+                        width: 20%;
+                    }
+
+                    &:nth-child(4) {
+                        width: 10%;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        padding-top: 15px;
+                        padding: 15px 15px 0 0;
+
+
+                    }
+
+
+                }
+            }
+        }
+    }
+
+    .acc-pay {
+        padding: 45px 15px;
+        background-color: #F3F5F6;
+        color: $b-cl;
+        border-radius: 10px;
+
+        .pay-title {
+            margin-bottom: 15px;
+        }
+
+        .p-item {
+            &:not(:first-child) {
+                margin-top: 15px;
+            }
+        }
+
+        .f-hidden {
+            display: none;
+
+            &:checked+.checkmark {
+
+                .checked {
+                    background-color: $main-cl;
+
+                    &::after {
+                        @include visible;
+                    }
+                }
+
+            }
+        }
+
+        .checkmark {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .checked {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            border: 1px solid rgba($color: $b-cl, $alpha: .3);
+            background-color: $w-cl;
+            position: relative;
+
+            &::after {
+                content: '';
+                background-image: url('../img/svg/icon-check-b.svg');
+                width: 10px;
+                height: 7px;
+                @include pos-mid;
+                z-index: 1;
+                @include hidden;
+            }
+        }
+
+        .text-check {
+            width: calc(100% - 20px);
+            padding-left: 10px;
+        }
+
+        .pay-ft {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #C4C4C4;
+        }
+
+        .pay-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 16px;
+        }
+
+        .btn-pay{
+            border-radius: 10px;
+            color: $w-cl;
+            margin-top: 20px;
+            height: auto;
+            padding: 16px 10px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #FFF004 0%, #FE9239 47.8%, rgba(254, 1, 174, 0.81) 123.2%);
+
+            &::after{
+                content: '';
+                @include pos-full;
+                z-index: -1;
+                transition: all .3s ease;
+                background: $main-cl;
+                @include hidden;
+            }
+
+            &:hover{
+                &::after{
+                    @include visible;
+                }
+            }
+        }
+    }
+
+}

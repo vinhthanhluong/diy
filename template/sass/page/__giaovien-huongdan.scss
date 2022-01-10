@@ -8,10 +8,16 @@
 
     .columns {
         align-items: center;
+        @include max-media($bk-d-992){
+            flex-direction: column-reverse !important;
+        }
     }
 
     .column {
         width: 50%;
+        @include max-media($bk-d-992){
+            width: 100%;
+        }
     }
 
     .title {
@@ -43,9 +49,15 @@
                 position: relative;
                 padding-left: 20px;
                 margin-left: 15px;
+                @include max-media($bk-576){
+                    margin-left: 0;
+                }
 
                 &:not(:first-child) {
                     margin-top: 15px;
+                    @include max-media($bk-576){
+                        margin-top: 10px;
+                    }
                 }
 
                 &::before {
@@ -68,8 +80,26 @@
 
 .team-teacher {
 
+    .columns{
+        @include max-media($bk-d-1200){
+            margin: -7.5px;
+        }
+    }
+
     .column {
         width: calc(100% / 4);
+        @include max-media($bk-d-1200){
+            padding: 7.5px;
+        }
+        @include max-media($bk-d-992){
+            width: calc(100% / 3);
+        }
+        @include max-media($bk-d-768){
+            width: calc(100% / 2);
+        }
+        @include max-media($bk-576){
+            width: 100%;
+        }
     }
 
     .title {
@@ -120,6 +150,9 @@
 
     .job {
         margin-bottom: 15px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 10px;
+        }
     }
 
     .box-star-line {

@@ -3,11 +3,23 @@
         background: linear-gradient(90deg, #00F1EF 24.37%, #0163FF 93.75%);
         padding: 30px 0 60px;
         color: $b-cl;
+        @include max-media($bk-d-1200){
+            padding: 30px 0 45px;
+        }
+        @include max-media($bk-d-992){
+            padding: 30px 0;
+        }
     }
 
     .steam-head {
         padding-top: 60px;
         width: calc(100% / 12 * 8);
+        @include max-media($bk-d-1200){
+            padding-top: 40px;
+        }
+        @include max-media($bk-d-992){
+            padding-top: 20px;
+        }
 
         .star {
 
@@ -77,12 +89,26 @@
         .column {
             &.txt {
                 width: calc(100% / 12 * 8);
+                @include max-media($bk-d-768){
+                    width: 100%;
+                }
             }
 
             &.sidebar {
                 width: calc(100% /12 * 4);
-
                 transform: translateY(-260px);
+                @include max-media($bk-d-1200){
+                    transform: translateY(-230px);
+                }
+                @include max-media($bk-d-992){
+                    transform: translateY(-200px);
+                }
+                @include max-media($bk-d-768){
+                    width: 100%;
+                    transform: translateY(0);
+                }
+
+                
             }
         }
     }
@@ -100,6 +126,7 @@
         }
 
         ul {
+            margin-bottom: 0;
             li {
                 position: relative;
                 margin-left: 15px;
@@ -131,6 +158,9 @@
 
         .steam-content {
             padding: 15px 15px 35px;
+            @include max-media($bk-d-992){
+                padding: 15px 15px 20px;
+            }
         }
 
         .steam-item {
@@ -138,6 +168,10 @@
                 margin-top: 15px;
                 padding-top: 15px;
                 border-top: 1px solid rgba($color: #C4C4C4, $alpha: .3);
+                @include max-media($bk-d-992){
+                    margin-top: 10px;
+                    padding-top: 10px;
+                }
             }
         }
 
@@ -150,6 +184,13 @@
 
     .steam-img {
         position: relative;
+        >img{
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            
+        }
 
     }
 
@@ -163,6 +204,9 @@
         .btn {
             padding: 16px 10px;
             border-radius: 10px;
+            @include max-media($bk-d-992){
+                padding: 12px 10px;
+            }
         }
 
         .btn-buy {
@@ -203,24 +247,45 @@
     }
 
     //comment 
-    .feedback {
+    .steam-comment{
+        margin-top: 30px;
         width: calc(100% / 12 * 8);
+        @include max-media($bk-d-768){
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+    .feedback {
         .cols {
             display: flex;
             flex-wrap: wrap;
             margin: -15px;
+            @include max-media($bk-d-992){
+                margin: -7.5px;
+                align-items: center;
+            }
         }
 
         .col {
             padding: 15px;
+            @include max-media($bk-d-992){
+                padding: 7.5px;
+            }
 
             &.fb-bx {
                 width: 198px;
+                @include max-media($bk-576){
+                    width: 130px;
+                }
             }
 
 
             &.fb-txt {
                 width: 370px;
+                width: calc(100% - 198px);
+                @include max-media($bk-576){
+                    width: calc(100% - 130px);
+                }
             }
         }
 
@@ -234,6 +299,9 @@
             .filled-stars {
                 i {
                     margin: 0;
+                    @include max-media($bk-576){
+                        font-size: 14px;
+                    }
                 }
             }
         }
@@ -244,6 +312,9 @@
             color: $b-cl;
             padding: 17px 15px;
             text-align: center;
+            @include max-media($bk-576){
+                padding: 15px 10px;
+            }
 
             .box-star-line {
                 flex-wrap: wrap;
@@ -254,28 +325,48 @@
 
             .star-text {
                 margin-top: 15px;
-                @include fz-16
+                @include fz-16;
+                @include max-media($bk-576){
+                    margin-top: 7px;
+                }
             }
         }
 
         .fb-num {
             margin-bottom: 15px;
             line-height: 1.1;
+            @include max-media($bk-576){
+                margin-bottom: 7px;
+            }
         }
 
         .fb-item{
             &:not(:first-child){
                 margin-top: 13px;
+                @include max-media($bk-576){
+                    margin-top: 5px;
+                }
             }
             .process{
                 width: 100%;
                 max-width: 100%;
                 margin:  0 10px 0 15px;
                 max-width: 170px;
+                @include max-media($bk-576){
+                    margin: 0 10px;
+                    width: calc(100% - 119px);
+                }
             }
 
-            .star{
-            }
+            // .star{
+            //     .empty-stars , .filled-stars{
+            //         i{
+            //             @include max-media($bk-576){
+            //                 font-size: 14px;
+            //             }
+            //         }
+            //     }
+            // }
 
             .star-text{
                 text-align: right;
@@ -288,9 +379,72 @@
 
     }
 
+    .comments{
+        margin-top: 30px;
+        @include max-media($bk-d-768){
+            margin-top: 20px;
+        }
+        .cm-title{
+            margin-bottom: 15px;
+        }
 
+        .cm-item{
+            &:not(:first-child){
+                margin-top: 30px;
+                border-top: 1px solid $w-cl;
+                padding-top: 30px;
+                @include max-media($bk-d-992){
+                    padding-top: 15px;
+                    margin-top: 15px;
+                }
+            }
+        }
 
+        .cm-acc{
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
 
+        .cm-avatar{
+            max-width: 41px;
+            max-height: 41px;
+            img{
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
 
+        .cm-text{
+            padding-left: 8px;
+        }
 
+        .cm-name{
+            margin-bottom: 3px;
+        }
+
+        .box-star-line{
+            margin-bottom: 15px;
+            @include max-media($bk-d-992){
+                margin-bottom: 10px;
+            }
+        }
+
+        .star{
+            .empty-stars , .filled-stars{
+                i{
+                    margin: 0;
+                    @include max-media($bk-576){
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .cm-txt{
+            line-height: 1.5;
+        }
+    }
 }
