@@ -1,45 +1,58 @@
-.questions{
-    .column{
+.questions {
+    .column {
         width: 50%;
+        @include max-media($bk-d-768){
+            width: 100%;
+        }
     }
 
-    .title{
+    .title {
         display: inline-block;
     }
 
-    .ques-box{
+    .ques-box {
         background-color: $w-cl;
         color: $b-cl;
         border-radius: 10px;
         overflow: hidden;
 
-        &:not(:first-child){
+        &:not(:first-child) {
             margin-top: 30px;
+            @include max-media($bk-d-992){
+                margin-top: 15px;
+            }
         }
 
-        &.active{
+        &.active {
             padding: 0;
-            .ques-tt{
+
+            .ques-tt {
                 background: linear-gradient(90deg, #01F1EF 1.93%, #0163FF 100%);
-                &::after{
+
+                &::after {
                     filter: brightness(0) invert(1);
                     transform: translateY(-50%) rotate(90deg);
                     transform: rotate(90deg);
                 }
             }
-         
+
         }
-        
+
     }
 
-    .ques-tt{
+    .ques-tt {
         position: relative;
         @include fz-16;
         font-weight: bold;
         padding: 26px 60px 24px 30px;
         cursor: pointer;
         transition: all .3s ease;
-        &::after{
+
+        @include max-media($bk-d-1200) {
+            padding: 15px 40px 15px 20px;
+        }
+
+        &::after {
             content: '';
             background-image: url('../img/svg/icon-right-1.svg');
             width: 15px;
@@ -49,27 +62,38 @@
             right: 30px;
             // transform: translateY(-50%);
             transition: all .3s ease;
+
+            @include max-media($bk-d-1200) {
+                top: 19px;
+                right: 20px;
+            }
         }
     }
 
-    .ques-cont{
+    .ques-cont {
         display: none;
-         padding: 30px;
-        .mona-content{
+        padding: 30px;
+
+        @include max-media($bk-d-1200) {
+            padding: 15px 20px;
+        }
+
+        .mona-content {
             line-height: 1.5;
-            P{
-                &:first-child{
+
+            P {
+                &:first-child {
                     margin-top: 0;
                 }
 
-                &:last-child{
+                &:last-child {
                     margin-bottom: 0;
                 }
             }
         }
     }
 
-    
+
 
 
 }

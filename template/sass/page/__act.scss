@@ -1,13 +1,36 @@
 .login-signup {
-    max-width: 1370px;
+    max-width: 1500px;
     margin: 0 auto;
+    padding: 0;
     position: relative;
     overflow: hidden;
+    background-color: #020F17;
+    @include max-media($bk-d-1900){
+        max-width: 1200px;
+    }
+    @include max-media($bk-d-1440){
+        max-width: 1000px;
+    }
     .act-rect{
         position: absolute;
         top: 0;
         left: 0;
         transform: translate(-50% , -50%);
+     
+
+        img{
+            @include max-media($bk-d-1440){
+                transform: scale(.5);
+            }
+        }
+    }
+
+    .act-wrapper{
+        overflow: hidden;
+    }
+
+    .columns{
+        align-items: center;
     }
 
     .column {
@@ -26,19 +49,31 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        @include max-media($bk-d-1440){
+            max-width: 380px;
+        }
 
-        padding: 250px 0;
+        // padding: 250px 0;
     }
 
     .act-logo {
         margin-bottom: 30px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 15px;
+        }
         img {
             margin: 0 auto;
+            @include max-media($bk-d-1440){
+                transform: scale(.8);
+            }
         }
     }
 
     .act-p{
         margin-bottom: 30px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 20px;
+        }
     }
 
     .act-f{
@@ -46,18 +81,38 @@
             margin-top: 15px;
         }
     }
+
+    .act-link{
+        transition: all .3s ease;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
     .act-ft{
         margin-top: 30px;
+    }
+
+    .act-form{
+        width: 100%;
+    }
+
+    .act-ft{
+        width: 100%;
     }
 
     .f-control{
         padding: 15px;
         height: auto;
         border-radius: 100px;
-        min-width: 423px;
+        // min-width: 423px;
+       
         &::placeholder{
             color: $b-cl;
         }
+
+        // @include max-media($bk-d-1440){
+        //     min-width: 380px;
+        // }
     }
 
     .f-submit{
@@ -68,5 +123,45 @@
         color: $w-cl;
         box-shadow: 0 12px 35px rgba($color: #A07900, $alpha: .2);
         cursor: pointer;
+
+        &::after{
+            content: '';
+            @include pos-full;
+            background-color: $main-cl;
+            z-index: -1;
+            transition: all .3s ease;
+            @include hidden;
+        }
+
+        &:hover{
+            &::after{
+                @include visible;
+            }
+        }
+    }
+
+    .act-ig{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 50px 0;
+        img{
+            margin: 0 auto;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            @include max-media($bk-d-1900){
+                max-height: 650px;
+            }
+            @include max-media($bk-d-1440){
+                max-height: 550px;
+            }
+            @include max-media($bk-d-1200){
+                max-height: 450px;
+            }
+        }
+
+       
     }
 }

@@ -185,12 +185,12 @@
         &:hover {
             &::after {
                 content: '';
-                transform: scale(1);
-                transform-origin: center left;
+                // transform: scale(1);
+                // transform-origin: center left;
 
-                @include max-media($bk-576) {
-                    transform-origin: center top;
-                }
+                // @include max-media($bk-576) {
+                //     transform-origin: center top;
+                // }
             }
         }
 
@@ -434,6 +434,7 @@
 
             &::placeholder {
                 opacity: .3;
+                font-style: italic;
             }
         }
 
