@@ -553,8 +553,10 @@
 
     .bx-video {
         position: relative;
+        padding-top: 56.25%;
+        width: 100%;
 
-        &.active {
+        &.playing {
             .s-play {
                 @include hidden;
             }
@@ -564,12 +566,17 @@
             @include pos-mid;
             pointer-events: none;
             transition: all .3s ease;
+            @include max-media($bk-576){
+                transform: translate(-50% , -50%) scale(.7);
+                transform-origin: center center;
+            }
 
         }
 
         .s-video {
             width: 100%;
-        cursor: pointer;
+            cursor: pointer;
+            @include pos-full;
 
         }
     }

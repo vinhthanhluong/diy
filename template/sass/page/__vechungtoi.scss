@@ -20,6 +20,10 @@
         }
     }
 
+    .title{
+        display: inline-block;
+    }
+
     .mona-content{
         p{
             @include fz-16;

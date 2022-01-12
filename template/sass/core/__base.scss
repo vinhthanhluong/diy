@@ -45,7 +45,7 @@ body {
     // }
 
     &.show{
-        @include custom-scrollbar(8px, $main-cl );
+        @include custom-scrollbar(7px, $main-cl );
     }
 }
 
@@ -59,7 +59,7 @@ html {
     font-display: swap;
     line-height: $lh-body;
     // color: $cl-body;
-    @include custom-scrollbar(8px , transparent);
+    @include custom-scrollbar(7px , transparent);
 }
 
 a {
@@ -169,7 +169,7 @@ li {
 }
 
 .wow {
-    animation-duration: 1s;
+    animation-duration: 1.2s;
 
     @include max-media($bk-d-768) {
         visibility: visible !important;

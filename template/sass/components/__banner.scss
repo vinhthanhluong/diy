@@ -134,6 +134,7 @@
         .title{
             margin-bottom: 15px;
             line-height: 1.2;
+            display: inline-block;
             @include max-media($bk-576){
                 margin-bottom: 10px;
             }

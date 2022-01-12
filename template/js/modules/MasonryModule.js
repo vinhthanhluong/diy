@@ -1,19 +1,19 @@
 export default function MasonryModule() {
-    $('.grid-n').masonry({
-        percentPosition: true,
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        stamp: '.stamp',
+    // $('.grid-n').masonry({
+    //     percentPosition: true,
+    //     itemSelector: '.grid-item',
+    //     columnWidth: '.grid-sizer',
+    //     stamp: '.stamp',
 
-        horizontalOrder: true,
-        // horizontalOrder: false,
+    //     horizontalOrder: true,
 
-        // gutter: 10,
+    //     gutter: '.gutter-sizer',
 
-        // isFitWidth: true
-        // fitWidth: true,
+    //     // isFitWidth: true
+    //     // fitWidth: true,
 
 
-        // resize: false,
-    });
+       
+
+    // });
 }

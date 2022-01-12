@@ -49,8 +49,8 @@ export default function PopupModule(){
 		e.preventDefault();
 		const link =
 			$(this).attr('href') ||
-			$(this).attr('data-mfp-src') ||
-			'https://www.youtube.com/watch?v=GGC86Z5p0AI&list=RDGGC86Z5p0AI';
+			$(this).attr('data-mfp-src')
+		
 		$.magnificPopup.open({
 			items: {
 				src: link,
