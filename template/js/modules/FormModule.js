@@ -55,7 +55,7 @@ export default function FormModule() {
 
 
     //range 
-    if($('.bx-range').lenght){
+    if($('.bx-range').length){
         window.onload = function () {
             slideOne();
             slideTwo();

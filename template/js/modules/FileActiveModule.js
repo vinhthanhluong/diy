@@ -64,6 +64,39 @@ export default function FileActiveModule() {
 
     $('#test-tt').attr('data-content');
 
+    const width = $(window).width();
+    if ($('.header-cate-mobi').length > 0 && width < 1200) {
+        $('.header-catalog').prependTo('.header-cate-mobi');
 
+
+        $('.cate-title').on('click', function (e) {
+            // $('.header-catalog').toggleClass('active');
+
+
+        });
+
+        const $main = $('.header-catalog');
+
+        $(document).mouseup(function (e) {
+            if (!$main.is(e.target) && $main.has(e.target).length === 0) {
+                $main.removeClass('active');
+                $main.find(".cate-content").slideUp();
+            }
+        });
+
+        $('.cate-title').on('click', function () {
+            $main.toggleClass('active');
+            $main.find(".cate-content").slideToggle();
+        });
+
+
+
+        $('.cate-item img').on('click', function () {
+            $(this).toggleClass('active');
+            // $(this).closest('.drop').find('.sub-cate').slideToggle();
+            $(this).parent().next('.sub-cate').stop().slideToggle();
+        });
+
+    }
 
 }

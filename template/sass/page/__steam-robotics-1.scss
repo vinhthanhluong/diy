@@ -246,6 +246,30 @@
         }
     }
 
+    .steam-cate{
+        background-color: $w-cl;
+        padding: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        color: $b-cl;
+        margin-top: 30px;
+        .cate-title{
+            margin-bottom: 15px;
+        }
+
+        .cate-item{
+            display: block;
+            transition: all .3s ease;
+            &:not(:first-child){
+                margin-top: 15px;
+            }
+
+            &:hover{
+                color: $main-cl;
+            }
+        }
+    }
+
     //comment 
     .steam-comment{
         margin-top: 30px;

@@ -129,7 +129,7 @@
         }
 
         .s-price{
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             line-height: 1;
             @include max-media($bk-d-1200){
                 margin-bottom: 15px;
@@ -137,7 +137,7 @@
         }
 
         .s-desc{
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             line-height: 1.5;
             @include max-media($bk-d-1200){
                 margin-bottom: 15px;
@@ -157,6 +157,8 @@
 
         .s-tx{
             padding-left: 10px;
+            font-size: 12px;
+
         }
 
         .s-btn{

@@ -124,8 +124,6 @@
                 -webkit-box-decoration-break: clone;
             }
         }
-
-
     }
 }
 
@@ -459,7 +457,7 @@
             top: 5px;
             bottom: 5px;
             right: 7.5px;
-            background-color: $yellow-cl;
+            background-color: #FFF300;
             width: auto;
             height: auto;
             padding: 11px 30px;
@@ -492,6 +490,7 @@
             &::placeholder {
                 opacity: .3;
                 font-style: italic;
+                color: $b-cl;
             }
         }
 
