@@ -517,7 +517,7 @@
 
         .p-price{
             &.main-cl{
-                color: $bb-cl;
+                color: rgba(254, 1, 174, 0.81);
             }
         }
 
@@ -596,6 +596,10 @@
             top: 20px;
             right: 35px;
         }
+        @include max-media($bk-d-768){
+            top: 15px;
+            right: 15px;
+        }
 
         &.active{
             .vd-list{
@@ -641,6 +645,9 @@
         color: $b-cl;
         border-radius: 10px;
         display: none;
+        @include max-media($bk-d-768){
+            right: -20px;
+        }
         &::after {
             content: '';
             width: 0;
@@ -652,11 +659,14 @@
             top: 0%;
             right: 36px;
             transform: translateY(-100%);
+            @include max-media($bk-d-768){
+                right: 25px;
+            }
         }
     }
 
     .v-title {
-        padding: 30px;
+        padding: 15px 20px;
         border-top: 1px solid #C4C4C4;
         display: flex;
         align-items: center;
@@ -676,6 +686,7 @@
         img {
             transition: all .3s ease;
             transform: rotate(-180deg);
+            width: 12px;
             @include max-media($bk-d-1200){
                 width: 12px;
             }
@@ -685,7 +696,7 @@
     }
 
     .v-content {
-        padding: 15px 30px;
+        padding: 15px 20px;
         border-top: 1px solid #D5D5D5;
         overflow-y: auto;
         max-height: 212px;
@@ -826,6 +837,8 @@
             padding: 15px;
             resize: none;
             border-radius: 10px;
+            background-color:rgba($color: $b-cl, $alpha: .4);
+            color: $w-cl;
             @include max-media($bk-d-1200){
                 height: 120px;
             }

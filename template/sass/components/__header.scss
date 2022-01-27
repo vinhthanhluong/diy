@@ -130,8 +130,9 @@
 
     .f-control {
         min-width: 360px;
-        @include max-media($bk-d-1200){
-            min-width:500px;
+
+        @include max-media($bk-d-1200) {
+            min-width: 500px;
         }
 
         @include max-media($bk-d-992) {
@@ -268,125 +269,89 @@
         position: absolute;
         top: 40px;
         right: 0;
-        width: 330px;
-        // background-color: $bg-w-cl;
-        // border: 1px $g-E5E5-cl solid;
-        // color: $b-cl;
-
+        width: 280px;
         border: 1px #19222D solid;
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: 0.16);
-        padding: 20px;
         @include hidden;
         transition: all .3s ease;
-        border-radius: 10px;
+        border-radius: 6px;
         color: $w-cl;
         background-color: #19222D;
-        padding-right: 10px;
 
-        @include max-media($bk-576) {
-            padding: 15px;
+        @include max-media($bk-576){
             width: 260px;
-            padding-right: 7.5px;
         }
 
         .cart-list {
-            max-height: 292px;
+            max-height: 278px;
             overflow: auto;
-            @include custom-vertical-scrollbar(2px);
-            padding-right: 10px;
+            @include custom-vertical-scrollbar(0);
 
             @include max-media($bk-576) {
-                // max-height: 171px;
-                max-height: 272px;
-                padding-right: 7.5px;
+                // max-height: 272px;
             }
 
             .cart-item {
                 display: flex;
                 align-items: center;
+                position: relative;
+                padding: 16px;
 
-                // padding-bottom: 20px;
-                // border-bottom: 1px solid rgba($color: $b-cl, $alpha: 0.1);
-                // border-bottom: 1px solid rgba($color: $w-cl, $alpha: 0.4);
-                // margin-bottom: 20px;
                 &:not(:first-child) {
-                    margin-top: 20px;
-                    padding-top: 20px;
                     border-top: 1px solid rgba($color: $w-cl, $alpha: .4);
-
-                    @include max-media($bk-576) {
-                        padding-top: 15px;
-                        margin-top: 15px;
-                    }
                 }
             }
 
             .cart-close {
                 color: $g-E5E5-cl;
-                font-size: 18px;
                 transition: all .3s ease;
                 cursor: pointer;
+                font-size: 14px;
+                order: 3;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+
+                &::after{
+                    content: 'x';
+                }
+
+                i{
+                    display: none;
+                }
 
                 &:hover {
-                    color: $b-cl;
+                    color: $main-cl;
                 }
             }
 
             .cart-img {
-                margin-left: 19px;
                 overflow: hidden;
                 position: relative;
                 cursor: pointer;
-                border-radius: 6px;
-
-                @include max-media($bk-576) {
-                    margin-left: 12px;
-                }
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba($color: $b-cl, $alpha: 0.5);
-                    z-index: 1;
-                    @include hidden;
-                }
-
-                &:hover {
-                    &::before {
-                        @include visible;
-                    }
-
-                    img {
-                        transform: scale(1.1);
-                    }
-                }
+                max-width: 60px;
 
                 img {
                     width: 100%;
                     height: 100%;
                     max-width: 100%;
                     object-fit: cover;
-                    border-radius: 6px;
-                    transition: all .3s ease;
-
                 }
             }
 
             .cart-info {
-                margin-bottom: 2px;
-                margin-left: 13px;
+                padding-left: 15px;
 
                 @include max-media($bk-576) {
-                    margin-left: 10px;
+                    padding-left: 10px;
                 }
 
                 .cart-title {
                     transition: all .3s ease;
                     cursor: pointer;
+                    font-weight: normal;
+                    text-transform: capitalize;
+                    margin-bottom: 3px;
 
                     &:hover {
                         color: $main-cl;
@@ -402,16 +367,8 @@
         .cart-total {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
-            padding-top: 20px;
             border-top: 1px solid rgba($color: $w-cl, $alpha: .6);
-            margin-right: 10px;
-
-            @include max-media($bk-576) {
-                margin-top: 15px;
-                padding-top: 15px;
-                margin-right: 7.5px;
-            }
+            padding: 16px 16px 0;
 
             .total-n {
                 color: $main-cl;
@@ -420,12 +377,7 @@
         }
 
         .cart-pay {
-            margin-top: 20px;
-            margin-right: 10px;
-
-            @include max-media($bk-576) {
-                margin-right: 7.5px;
-            }
+            padding: 16px;
 
             .btn-link {
                 border-radius: 6px;
@@ -457,7 +409,7 @@
         max-height: 400px;
         overflow-x: hidden;
         overflow-y: auto;
-        @include custom-vertical-scrollbar(3px , $main-cl, transparent)
+        @include custom-vertical-scrollbar(3px, $main-cl, transparent)
     }
 }
 
@@ -473,12 +425,14 @@
     }
 
     &.active {
-        .cate-title{
-            @include max-media($bk-d-1200){
+        .cate-title {
+            @include max-media($bk-d-1200) {
                 color: $yellow-cl;
-                .icon-cate{
+
+                .icon-cate {
                     transform: translateY(-50%) rotate(90deg);
                 }
+
                 img {
                     filter: none;
                 }
@@ -503,7 +457,7 @@
             filter: brightness(0) invert(1);
         }
 
-        .icon-cate{
+        .icon-cate {
             display: none;
             position: absolute;
             top: 50%;
@@ -511,11 +465,12 @@
             transform: translateY(-50%);
             padding: 0;
             transition: all .3s ease;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 display: block;
             }
 
-            img{
+            img {
                 padding: 0;
             }
         }

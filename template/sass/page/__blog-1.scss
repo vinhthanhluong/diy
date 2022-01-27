@@ -213,7 +213,9 @@
             transition: all .3S ease;
 
             &:hover {
-                background-color: $main-cl;
+                // background-color: rgba($color: $main-cl, $alpha: .7);
+                // border-color: $main-cl;
+                color: $main-cl;
                 border-color: $main-cl;
             }
         }

@@ -8,7 +8,7 @@
         @include max-media($bk-d-768) {
             overflow-x: scroll;
             white-space: nowrap;
-            @include custom-horizontal-scrollbar(2px , $bb-cl-1);
+            @include custom-horizontal-scrollbar(2px , $bb-cl-1, transparent);
         }
 
 

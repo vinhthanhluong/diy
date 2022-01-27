@@ -16,6 +16,7 @@
         width: calc(100% / 12 * 8);
         @include max-media($bk-d-1200){
             padding-top: 40px;
+            width: 100%;
         }
         @include max-media($bk-d-992){
             padding-top: 20px;
@@ -107,8 +108,12 @@
                     width: 100%;
                     transform: translateY(0);
                 }
+            }
 
-                
+            &s{
+                @include max-media($bk-d-768){
+                    flex-direction: column-reverse;
+                }
             }
         }
     }
@@ -262,6 +267,9 @@
             transition: all .3s ease;
             &:not(:first-child){
                 margin-top: 15px;
+                @include max-media($bk-d-992){
+                    margin-top: 8px;
+                }
             }
 
             &:hover{
@@ -273,9 +281,9 @@
     //comment 
     .steam-comment{
         margin-top: 30px;
-        width: calc(100% / 12 * 8);
+        // width: calc(100% / 12 * 8);
         @include max-media($bk-d-768){
-            width: 100%;
+            // width: 100%;
             margin-top: 20px;
         }
     }
